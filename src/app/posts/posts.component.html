@@ -1,0 +1,19 @@
+<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 cont card" *ngIf="auth.loggedIn && auth.isAdmin">
+  <h4 class="card-header" id="nuevap">Nueva Publicación</h4>
+    <form class="form-inline row" [formGroup]="addPostForm" (ngSubmit)="addPost()" >
+          <input id="inputTitulo" class="col-md-8 col-sm-8 col-xs-6 inputc" type="text" name="title" formControlName="title" placeholder="Titulo"> <button id="btnPublicar" class="col-md-3 col-sm-3 col-xs-5 btn btn-primary" type="submit" [disabled]="!addPostForm.valid"><i class="fa fa-paper-plane"></i> Publicar</button><br><br>
+        ​<textarea id="inputCont" class="inputt col-md-12 col-sm-12 col-xs-12" type="text" name="cont" formControlName="cont" rows="7" cols="70" placeholder="Contenido"></textarea>
+    </form>
+	<section id="posts">
+  <article *ngFor="let post of posts" class="articlePost">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.cont }}</p>
+    <td>
+       <button *ngIf="auth.isAdmin" class="btn btn-sm btn-danger" (click)="deletePost(post)"><i class="fa fa-trash"></i> Eliminar</button>
+    </td>
+  </article>
+	</section>
+</div>
+
+
+

@@ -1,0 +1,49 @@
+<app-toast [message]="toast.message"></app-toast>
+
+<div class="col-md-10 col-md-offset-1 contForm">
+<h4 id="registro">Registro</h4>
+<img src="assets/img/user.png" class="col-md-5" alt="">
+<form class="form1 col-md-5 col-md-offset-1" [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="input-group" [ngClass]="setClassUsername()">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input class="form-control" type="text" name="username" formControlName="username" placeholder="Username" autofocus>
+      </div>
+      <div class="input-group" [ngClass]="setClassName()">
+        <span class="input-group-addon"><i class="fa fa-address-card-o"></i></span>
+        <input class="form-control" type="text" name="name" formControlName="name" placeholder="Nombre" autofocus>
+      </div>
+      <div class="input-group" [ngClass]="setClassLastName()">
+        <span class="input-group-addon"><i class="fa fa-address-card-o"></i></span>
+        <input class="form-control" type="text" name="lastName" formControlName="lastName" placeholder="Apellidos" autofocus>
+      </div>
+      <div class="input-group" [ngClass]="setClassIdentidad()">
+      <span class="input-group-addon"><i class="fa fa-address-card"></i></span>
+        <input class="form-control" type="text" name="identidad" formControlName="identidad" placeholder="Numero de identidad">
+      </div>
+      <div class="input-group" [ngClass]="setClassPhone()">
+        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+        <input class="form-control" type="text" name="telefono" formControlName="phone" placeholder="Numero de telefono">
+      </div>
+      <div class="input-group" [ngClass]="setClassEmail()">
+        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+        <input class="form-control" type="email" name="email" formControlName="email" placeholder="Email">
+      </div>
+      <div class="input-group" [ngClass]="setClassFechaNac()">
+        <span class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
+        <input class="form-control" type="date" name="fechaNac" formControlName="fechaNac" placeholder="Fecha de naciemiento">
+      </div>
+      <div class="input-group" [ngClass]="setClassPassword()">
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <input class="form-control" type="password" name="password" formControlName="password" placeholder="Password">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-black-tie"></i></span>
+        <select class="cboRoles" name="role" formControlName="role">
+          <option value="" selected disabled>Role</option>
+          <option class="cboRoles" value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+      <button class="btn btn-danger" type="submit" [disabled]="!registerForm.valid"><i class="fa fa-user-plus"></i> Registrar</button>
+</form>  
+</div>

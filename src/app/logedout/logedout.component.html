@@ -1,0 +1,18 @@
+<section id="header" *ngIf="auth.loggedIn==false"> 
+    <div class="row col-md-12">
+        <img src="assets/img/1.png" class="col-md-2 col-md-offset-5" id="suit" alt="">  
+    </div>
+    <h1 class="subt">Intelectual <span class="red">Socialismo</span></h1>
+    <h2 class="subt2 col-md-12">El nuevo cambio de Honduras</h2>
+    <div class="row col-md-12 contBtn" >
+        <button routerLink="/login"  id="btnRegistrar" class="btn btn-primary ">Iniciar sesión</button>  
+    </div>
+</section>
+<section>
+	<app-posts *ngIf="auth.loggedIn"></app-posts>	
+	<app-about *ngIf="auth.loggedIn==false"></app-about>	
+</section>
+
+
+	
+

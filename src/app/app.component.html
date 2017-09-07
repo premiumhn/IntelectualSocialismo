@@ -1,0 +1,47 @@
+<section id="inicio">
+  <!-- <nav class="navbar navbar-fixed-top nav1">
+  <div id="logo-titulo" class="nav navbar-nav  navbar-left">
+    <img src="assets/img/logo.png" id="logo" alt="">
+  </div>
+    <ul [class.mi-estilo]="auth.loggedIn" class="nav navbar-nav  navbar-right ul1">
+    <a routerLink="/" class="nav-item nav-link separador1" routerLinkActive="active">Inicio</a> 
+      <a routerLink="/admin" class="nav-item nav-link separador" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">Administración
+      </a>
+      <a routerLink="/account" class="nav-item nav-link separador" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
+        <i class="fa fa-user"></i> Cuenta ({{auth.currentUser.username}})
+      </a>
+      <a routerLink="/account" class="nav-item nav-link separador" routerLinkActive="active" *ngIf="auth.loggedIn">
+        <i class="fa fa-user"></i> Cuenta ({{auth.currentUser.username}})
+      </a>
+      <a routerLink="/register" class="nav-item nav-link separador" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
+        <i class="fa fa-sign-out"></i> Añadir usuario
+      </a>
+      <a routerLink="/logout" class="nav-item nav-link separador" routerLinkActive="active" *ngIf="auth.loggedIn">
+        <i class="fa fa-sign-out"></i> Salir
+      </a>
+      <a routerLink="/login" class="nav-item nav-link separador" routerLinkActive="active" *ngIf="!auth.loggedIn">
+        <i class="fa fa-sign-in"></i> Iniciar Session
+      </a>
+    </ul>
+  </nav>  -->
+
+<div class="topnav" id="myTopnav">
+    <img src="assets/img/logo.png" alt="" class="row col-md-5 col-sm-8 col-xs-12">
+  <ul [class.mi-estilo]="auth.loggedIn" class="nav navbar-nav  navbar-right ul1">
+    <a routerLink="/" routerLinkActive="active">Inicio</a>
+    <a routerLink="/admin" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">Administración</a>
+    <a routerLink="/account" routerLinkActive="active" href="#news" *ngIf="auth.loggedIn && auth.isAdmin">Cuenta ({{auth.currentUser.username}})</a>
+    <a routerLink="/register" routerLinkActive="active"  >Añadir usuario</a>
+    <a routerLink="/logout" routerLinkActive="active" *ngIf="auth.loggedIn">Salir</a>
+    <a routerLink="/login" routerLinkActive="active" *ngIf="!auth.loggedIn">Iniciar sesión</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" (click)="myFunction()">&#9776;</a>
+  </ul>
+</div>  
+
+  <div id="cont">
+     <router-outlet></router-outlet>
+ </div>
+</section>
+
+
+ 

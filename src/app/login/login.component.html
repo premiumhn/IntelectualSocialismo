@@ -1,0 +1,20 @@
+<app-toast [message]="toast.message"></app-toast>
+
+<section id="cuerpo">
+  <div class=" col-md-6 col-md-offset-3 contForm">
+  <h4 class="inicio">Inicio de sesión</h4>
+     <form class="col-md-10 col-md-offset-1" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="input-group" [ngClass]="setClassEmail()">
+          <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+          <input class="form-control" type="email" name="email" formControlName="email" placeholder="Email" autofocus>
+        </div>
+        <div class="input-group" [ngClass]="setClassPassword()">
+          <span class="input-group-addon"><i class="fa fa-key"></i></span>
+          <input class="form-control" type="password" name="password" formControlName="password" placeholder="Password">
+        </div>
+        <button class="btn btn-primary col-md-offset-4 btnEntrar" type="submit" [disabled]="!loginForm.valid"><i class="fa fa-sign-in"></i>Entrar</button>
+      </form> 
+  </div>
+</section>
+
+    
